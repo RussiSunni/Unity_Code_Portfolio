@@ -8,10 +8,6 @@ public class DraggableBlock : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 {
     public Transform parentToReturnTo = null;
     public Transform placeholderParent = null;
-    //  GameObject placeholder = null;
-
-    //  public AudioClip audioClip;
-
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -19,7 +15,6 @@ public class DraggableBlock : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         placeholderParent = parentToReturnTo;
         this.transform.SetParent(this.transform.parent.parent);
 
-        //  print(this.name);
         RectTransform rt = this.GetComponent<RectTransform>();
         rt.sizeDelta = new Vector2(90, 90);
 
@@ -30,8 +25,6 @@ public class DraggableBlock : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnDrag(PointerEventData eventData)
     {
-        //  Debug.Log("dragging");
-
         this.transform.position = eventData.position;
     }
 
@@ -40,8 +33,6 @@ public class DraggableBlock : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         this.transform.SetParent(parentToReturnTo);
 
         GetComponent<CanvasGroup>().blocksRaycasts = true;
-
-        // Destroy(placeholder);
 
         StartCoroutine((RegisterWord()));
     }

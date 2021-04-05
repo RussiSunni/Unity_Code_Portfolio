@@ -72,29 +72,23 @@ public class Swipe : MonoBehaviour, IPointerDownHandler, IPointerUpHandler // re
 
         if (swipeAngle > -45 && swipeAngle <= 45)
         {
-            //  Debug.Log("right");
-            var newRowIndex = rowIndex + 1;
+           var newRowIndex = rowIndex + 1;
             this.transform.SetParent(gameControlScript.Rows[currentRow][newRowIndex]);
         }
         else if (swipeAngle > 45 && swipeAngle <= 135)
         {
-            //  Debug.Log("up");
             var newColIndex = colIndex - 1;
             this.transform.SetParent(gameControlScript.Cols[currentCol][newColIndex]);
         }
         else if (swipeAngle > 135 || swipeAngle <= -135)
         {
-            //  Debug.Log("left");
             var newRowIndex = rowIndex - 1;
             this.transform.SetParent(gameControlScript.Rows[currentRow][newRowIndex]);
         }
         else if (swipeAngle < -45 && swipeAngle >= -135)
         {
-            //  Debug.Log("down");
             var newColIndex = colIndex + 1;
             this.transform.SetParent(gameControlScript.Cols[currentCol][newColIndex]);
-
-
         }
         StartCoroutine((RegisterWord()));
     }

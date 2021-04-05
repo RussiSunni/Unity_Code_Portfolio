@@ -5,7 +5,6 @@ public class SoundManager : MonoBehaviour
 {
     public AudioSource audioSrc;
     public List<AudioClip> wordSoundList = new List<AudioClip>();
-    // public AudioClip HELLO, UMBRELLA, SALT, JUMP, SIT, CAT, QUEEN, BUS, BLOND;
     void Start()
     {
 

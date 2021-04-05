@@ -18,9 +18,6 @@ public class DropPanel : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoi
     List<Transform> Col8 = new List<Transform>();
     List<List<Transform>> columns = new List<List<Transform>>();
 
-
-    //public Transform A4, A5, A6, B4, B5, B6, C4, C5, C6, D4, D5, D6, E4, E5, E6, F4, F5, F6, G4, G5, G6, H4, H5, H6;
-
     void Start()
     {
         GameObject gameControl = GameObject.Find("GameControl");
